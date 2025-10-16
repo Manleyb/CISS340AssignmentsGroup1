@@ -1,2 +1,8 @@
-# Display the first name, last name and rounded years worked of all employees sorted in a desceding order based on the rounded years
-
+SELECT
+  first_name,
+  last_name,
+  ROUND((CURRENT_DATE - hire_date) / 365.25) AS years_worked
+FROM
+  employees
+ORDER BY
+  years_worked DESC;
